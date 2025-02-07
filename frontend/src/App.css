@@ -1,0 +1,47 @@
+/* Aseguramos que el body y html ocupen toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #333333; /* Gris oscuro */
+}
+
+.navbar-brand {
+  color: #8B0000 !important; /* Rojo oscuro */
+}
+
+.nav-link {
+  color: #8B0000 !important; /* Rojo oscuro */
+}
+
+.nav-link:hover {
+  color: #fff !important; /* Hover en blanco */
+}
+
+/* Aseguramos que el contenedor principal ocupe toda la altura */
+.container-fluid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Aseguramos que el contenido ocupe toda la altura restante, empujando el footer hacia abajo */
+main {
+  flex-grow: 1;
+  padding-bottom: 50px; /* Espacio para el footer */
+}
+
+/* Pie de página ajustado al final de la página */
+footer {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
