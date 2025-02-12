@@ -2,33 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
   return (
-    <div className="vh-100 d-flex flex-column">
-      {/* Franja superior con el logo - Color blanquecino */}
-      <header className="w-100 text-center py-3 bg-light">
-        <img src="./img/logo.png" alt="Hammer Gym" className="img-fluid" style={{ maxHeight: '100px' }} />
-      </header>
-
-      {/* Barra de navegación (fondo oscuro) */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-        <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/contact">Contáctanos</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/login">Acceder</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div className="vh-150 d-flex flex-column">
 
       {/* Contenido principal */}
       <main className="flex-grow-1 d-flex flex-column align-items-center text-center text-dark bg-light w-100 py-5">
@@ -62,14 +36,33 @@ const Home = () => {
                 innovación y atención personalizada a cada uno de nuestros miembros.
               </p>
             </div>
+            {/* Instalaciones */}
+            <section className="mt-4 text-center">
+              <h2 className="text-danger fw-bold">Instalaciones</h2>
+              <div className="row justify-content-center">
+                <div className="col-md-6 col-lg-4 mb-4">
+                  <img 
+                    style={{ width: '100%' }} 
+                    src="../img/hammer.jpg" 
+                    alt="Instalaciones Hammer Gym" 
+                    className="img-fluid rounded"
+                  />
+                  <p className="mt-2">Conoce nuestras modernas instalaciones, diseñadas para ofrecerte el mejor ambiente de entrenamiento.</p>
+                </div>
+                <div className="col-md-6 col-lg-4 mb-4">
+                  <img 
+                    style={{ width: '100%' }} 
+                    src="../img/instalaciones.jpg" 
+                    alt="Instalaciones Hammer Gym" 
+                    className="img-fluid rounded"
+                  />
+                  <p className="mt-2">Disfruta de un ambiente exclusivo para lograr tus objetivos físicos.</p>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-3 w-100">
-        <p>&copy; 2025 Hammer Gym. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 };

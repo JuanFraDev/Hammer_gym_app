@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ setIsAuthenticated, setRole }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -36,17 +36,22 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         // Guardar el token en el almacenamiento local o en un estado global
+        console.log(data)
         localStorage.setItem('token', data.token);
-        
+        setRole(data.role); 
+        setIsAuthenticated(true);
+        localStorage.setItem('isAuthenticated', 'true'); 
+        localStorage.setItem('role', data.role);
         setMessage(`¡Bienvenido!`); // O cualquier otro campo de bienvenida
         setTimeout(() => {
           navigate('/home-login'); // Redirige al Home
-        }, 2000); // Espera 2 segundos antes de redirigir
+        }, 500); // Espera 2 segundos antes de redirigir
       } else {
         setMessage(data.message || 'Error al iniciar sesión');
       }
     } catch (error) {
       setMessage('Hubo un error al intentar iniciar sesión');
+      console.log(error)
     } finally {
       setIsLoading(false);
     }
@@ -54,29 +59,6 @@ const Login = () => {
 
   return (
     <div className="vh-100 d-flex flex-column">
-      <header className="w-100 text-center py-3 bg-light">
-        <img src="./img/logo.png" alt="Hammer Gym" className="img-fluid" style={{ maxHeight: '100px' }} />
-      </header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-        <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/contact">Contáctanos</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/login">Acceder</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
       <main className="flex-grow-1 d-flex align-items-center justify-content-center bg-light">
         <div className="card shadow p-4" style={{ maxWidth: '400px', width: '100%' }}>

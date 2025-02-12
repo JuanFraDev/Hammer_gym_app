@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const MisCursos = () => {
+const Gestionar = () => {
   const [cursos, setCursos] = useState([
-    { id: 1, nombre: 'Bailoterapia', fechaInscripcion: '2025-02-15' },
-    { id: 2, nombre: 'Aeróbicos', fechaInscripcion: '2025-02-20' },
-    { id: 3, nombre: 'Plan Mensual de Gimnasio', fechaInscripcion: '2025-02-25' },
-    { id: 4, nombre: 'Crossfit', fechaInscripcion: '2025-03-01' },
+    { id: 1, nombre: 'Bailoterapia', link: 'https://www.youtube.com/embed/wpkmDzfxKUA?si=YnBl-cEtwFFBYEIc' },
+    { id: 2, nombre: 'Aeróbicos', link: 'https://www.youtube.com/embed/wpkmDzfxKUA?si=YnBl-cEtwFFBYEIc' },
+    { id: 3, nombre: 'Plan Mensual de Gimnasio', link: 'https://www.youtube.com/embed/RHCnQO_iGk8?si=NbjbeTiaupOl1k_R' },
+    { id: 4, nombre: 'Crossfit', link: 'https://www.youtube.com/embed/MZX3vu_mA34?si=UCEvIkM9CtcpvdHm' },
   ]);
 
   const eliminarCurso = (id) => {
@@ -17,14 +17,14 @@ const MisCursos = () => {
 
   return (
     <div className="container mt-5">
-      <h1>Mis Cursos</h1>
-      <p>Lista de cursos que has inscrito:</p>
+      <h1>Recursos Disponibles</h1>
+      <p>Lista de recursos disponibles:</p>
 
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Nombre del Curso</th>
-            <th>Fecha de Inscripción</th>
+            <th>Nombre del Recurso</th>
+            <th>Link</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -32,7 +32,7 @@ const MisCursos = () => {
           {cursos.map((curso) => (
             <tr key={curso.id}>
               <td>{curso.nombre}</td>
-              <td>{curso.fechaInscripcion}</td>
+              <td>{curso.link}</td>
               <td>
                 <button
                   className="btn btn-danger"
@@ -49,4 +49,4 @@ const MisCursos = () => {
   );
 };
 
-export default MisCursos;
+export default Gestionar;

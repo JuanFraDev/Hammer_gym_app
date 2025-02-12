@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const MisCursos = () => {
+const Clientes = () => {
   const [cursos, setCursos] = useState([
-    { id: 1, nombre: 'Bailoterapia', fechaInscripcion: '2025-02-15' },
-    { id: 2, nombre: 'Aeróbicos', fechaInscripcion: '2025-02-20' },
-    { id: 3, nombre: 'Plan Mensual de Gimnasio', fechaInscripcion: '2025-02-25' },
-    { id: 4, nombre: 'Crossfit', fechaInscripcion: '2025-03-01' },
+    { id: 1, nombre: 'Brenda Montenegro', mail: 'brenda@gmail.com' },
+    { id: 2, nombre: 'Mateo Cañizares', mail: 'mateo@gmail.com' },
+    { id: 3, nombre: 'Cristian Gatia', mail: 'cristian@gmail.com' },
+    { id: 4, nombre: 'Lily Pérez', mail: 'lily@gmail.com' },
   ]);
 
   const eliminarCurso = (id) => {
@@ -17,14 +17,14 @@ const MisCursos = () => {
 
   return (
     <div className="container mt-5">
-      <h1>Mis Cursos</h1>
-      <p>Lista de cursos que has inscrito:</p>
+      <h1>Listado de Usuarios</h1>
+      <p>Lista de usuarios inscritos:</p>
 
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>Nombre del Curso</th>
-            <th>Fecha de Inscripción</th>
+            <th>Nombre del Usuario</th>
+            <th>Mail</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -32,7 +32,7 @@ const MisCursos = () => {
           {cursos.map((curso) => (
             <tr key={curso.id}>
               <td>{curso.nombre}</td>
-              <td>{curso.fechaInscripcion}</td>
+              <td>{curso.mail}</td>
               <td>
                 <button
                   className="btn btn-danger"
@@ -49,4 +49,4 @@ const MisCursos = () => {
   );
 };
 
-export default MisCursos;
+export default Clientes;

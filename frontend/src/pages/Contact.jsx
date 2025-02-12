@@ -2,33 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Contact = () => {
   return (
-    <div className="vh-100 d-flex flex-column">
-      {/* Franja superior con el logo */}
-      <header className="w-100 text-center py-3 bg-light">
-        <img src="./img/logo.png" alt="Hammer Gym" className="img-fluid" style={{ maxHeight: '100px' }} />
-      </header>
-
-      {/* Barra de navegación */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-        <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/contact">Contáctanos</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger fw-bold" href="/login">Acceder</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div className="vh-150 d-flex flex-column">
 
       {/* Contenido Principal */}
       <main className="flex-grow-1 d-flex align-items-center justify-content-center bg-light">
@@ -41,10 +15,10 @@ const Contact = () => {
               <div className="card shadow">
                 <div className="card-body">
                   <h5 className="card-title text-danger fw-bold">📍 Ubicación</h5>
-                  <p className="card-text">Av. Principal 123, Sector Centro, Ciudad</p>
+                  <p className="card-text">Juan Camacaro, Quito 170131</p>
                   <div className="ratio ratio-16x9">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508494!2d144.95373531531696!3d-37.81720997975162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5778c3d7fa2b6f3!2sGym!5e0!3m2!1sen!2s!4v1614874293890!5m2!1sen!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7801455629924!2d-78.54118199999999!3d-0.25063959999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59913ce78da9b%3A0xd2504ce3f88f6bab!2sHammer%20Gym!5e0!3m2!1ses!2sec!4v1739225214303!5m2!1ses!2sec" 
                       title="Google Maps"
                       style={{ border: 0 }}
                       allowFullScreen
@@ -68,14 +42,15 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+            
 
             {/* Correo Electrónico */}
             <div className="col-md-6">
               <div className="card shadow">
                 <div className="card-body">
                   <h5 className="card-title text-danger fw-bold">📧 Correo Electrónico</h5>
-                  <p className="card-text">info@hammergym.com</p>
-                  <a href="mailto:info@hammergym.com" className="btn btn-danger fw-bold">Enviar Correo</a>
+                  <p className="card-text">Hammergym01@gmail.com</p>
+                  <a href="mailto:Hammergym01@gmail.com" className="btn btn-danger fw-bold">Enviar Correo</a>
                 </div>
               </div>
             </div>
@@ -93,14 +68,13 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+            <div className="w-300"></div>
           </div>
         </div>
+        
       </main>
 
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-3 w-100">
-        <p>&copy; 2025 Hammer Gym. Todos los derechos reservados.</p>
-      </footer>
+
     </div>
   );
 };
